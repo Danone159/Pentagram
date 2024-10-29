@@ -22,7 +22,7 @@ export default function Navbar() {
   };
 
   return (
-    <Box sx={{ position: 'fixed', button:0, left: 0, right: 0,}}>
+    <Box sx={{ width: '100%', position: 'fixed', bottom: 0 }}>
       <BottomNavigation
         showLabels
         value={value}
