@@ -11,6 +11,7 @@ export const authOptions: NextAuthOptions = {
     }),
   ],
   secret: process.env.NEXTAUTH_SECRET,
+  debug: true,  //pozeranie toho čo je zle
   pages: {
     signIn: '/auth/prihlasenie',
     signOut: '/auth/odhlasenie',
