@@ -1,14 +1,16 @@
-// src/app/auth/registracia/page.tsx
+// /src/app/auth/registracia.tsx
 
-import Typography from "@mui/material/Typography";
+"use client";
 
-export const metadata = { title: "Registracia uzivatela | ZoškaSnap" };
+import { Button } from '@mui/material';
 
-export default function SignUp() {
-
+export default function Registracia() {
+  // Tu môžeš pridať logiku registrácie
   return (
-
-      <Typography> Registracia uzivatela </Typography>
-
+    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
+      <Button variant="contained" color="primary">
+        Registrovať
+      </Button>
+    </div>
   );
 }

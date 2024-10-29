@@ -1,14 +1,15 @@
-// src/app/auth/prihlasenie/page.tsx
+// /src/app/auth/prihlasenie.tsx
+"use client";
 
-import Typography from "@mui/material/Typography";
+import { signIn } from "next-auth/react";
+import { Button } from '@mui/material';
 
-export const metadata = { title: "Prihlasenie uzivatela | ZoškaSnap" };
-
-export default function SignIn() {
-
+export default function Prihlasenie() {
   return (
-
-      <Typography> Prihlasenie uzivatela </Typography>
-
+    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
+      <Button variant="contained" color="primary" onClick={() => signIn("google")}>
+        Prihlásiť sa s Google
+      </Button>
+    </div>
   );
 }

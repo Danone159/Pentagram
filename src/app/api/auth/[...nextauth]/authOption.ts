@@ -1,4 +1,4 @@
-// src/app/api/auth/[...nextauth]/authOptions.ts
+// src/app/api/auth/[...nextauth]/authOption.ts
 
 import { NextAuthOptions } from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
@@ -23,4 +23,3 @@ export const authOptions: NextAuthOptions = {
     },
   },
 };
-
