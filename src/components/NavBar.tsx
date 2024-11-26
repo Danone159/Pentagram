@@ -11,6 +11,8 @@ import LoginIcon from '@mui/icons-material/Login';
 import LogoutIcon from '@mui/icons-material/Logout';
 import { useRouter } from 'next/navigation';
 import { useSession, signOut } from 'next-auth/react';
+import PersonAddIcon from '@mui/icons-material/PersonAdd';
+
 
 export default function Navbar() {
   const [value, setValue] = React.useState('/');
@@ -32,6 +34,7 @@ export default function Navbar() {
         <BottomNavigationAction label="Domov" value="/" icon={<HomeIcon />} />
         <BottomNavigationAction label="Profily" value="/profil" icon={<AccountCircleIcon />} />
         <BottomNavigationAction label="Príspevky" value="/prispevok" icon={<AddCircleIcon />} />
+        <BottomNavigationAction label="Registrácia" value="/prihlásenie" icon={<PersonAddIcon />} />
         {session ? (
           <BottomNavigationAction
             label="Odhlásiť"
