@@ -2,7 +2,7 @@
 
 import { Metadata } from "next";
 import "./globals.css";
-import Navbar from "../components/NavBar"; 
+import Navbar from '@/components/Navbar.1';
 import AuthProvider from "../components/AuthProvider";
 
 export const metadata: Metadata = {
