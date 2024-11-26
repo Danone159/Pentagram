@@ -14,11 +14,11 @@ import { useSession, signOut } from "next-auth/react";
 export default function Navbar() {
   const [value, setValue] = React.useState("/");
   const router = useRouter();
-  const { data: session } = useSession(); // Stav užívateľa
+  const { data: session, status } = useSession(); // Add `status` for loading state
 
   const handleNavigation = (event: React.SyntheticEvent, newValue: string) => {
     setValue(newValue);
-    router.push(newValue); // Navigácia
+    router.push(newValue); // Navigate to the selected route
   };
 
   return (
@@ -35,8 +35,7 @@ export default function Navbar() {
           value="/prispevok"
           icon={<AddCircleIcon />}
         />
-        {/* Zobraziť tlačidlo Registrácia len pre neprihlásených užívateľov */}
-        {!session && (
+        {!session && status !== "loading" && (
           <BottomNavigationAction
             label="Registrácia"
             value="/auth/registracia"
@@ -50,11 +49,13 @@ export default function Navbar() {
             icon={<LogoutIcon />}
           />
         ) : (
-          <BottomNavigationAction
-            label="Prihlásenie"
-            value="/auth/prihlasenie"
-            icon={<LoginIcon />}
-          />
+          status !== "loading" && (
+            <BottomNavigationAction
+              label="Prihlásenie"
+              value="/auth/prihlasenie"
+              icon={<LoginIcon />}
+            />
+          )
         )}
       </BottomNavigation>
     </Box>
