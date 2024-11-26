@@ -8,7 +8,7 @@ export default function registracia() {
   return (
     <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
       <Button variant="contained" color="primary" onClick={() => signIn("google")}>
-        Prihlásiť sa s Google
+        Registrovať sa s Google
       </Button>
     </div>
   );

@@ -6,6 +6,10 @@ import { Box, Typography } from "@mui/material";
 export default function HomePage() {
   const { data: session } = useSession(); // Fetch the session data
 
+  // Ensure that session and user data are defined before accessing
+  const userName = session?.user?.name || "Používateľ";
+  const userEmail = session?.user?.email || "Neznámy email";
+
   return (
     <Box
       style={{
@@ -19,10 +23,10 @@ export default function HomePage() {
       {session ? (
         <>
           <Typography variant="h4" gutterBottom>
-            Ahoj {session.user?.name}, ste prihlásený!
+            Ahoj {userName}, ste prihlásený!
           </Typography>
           <Typography variant="body1" gutterBottom>
-            Váš email: {session.user?.email}
+            Váš email: {userEmail}
           </Typography>
         </>
       ) : (
@@ -32,9 +36,7 @@ export default function HomePage() {
           </Typography>
           <Typography variant="body1" gutterBottom>
             Prosím, prihláste sa, aby ste mohli pokračovať.
-          </Typography>
-
-        </>
+          </Typography>  </>
       )}
     </Box>
   );
