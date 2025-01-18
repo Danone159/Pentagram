@@ -47,7 +47,7 @@ export default function Navbar() {
         )}
         {session ? (
           <BottomNavigationAction
-            label="Odhlásiť"
+            label="Odhlásiť sa"
             onClick={() => signOut()}
             icon={<LogoutIcon />}
           />
