@@ -26,7 +26,7 @@ export default function registracia() {
         hoverBackgroundColor="gray"
         hoverBorderColor="darkred"
       >
-        Prihlásiť sa cez Google
+        Registrovať sa cez Google
       </CustomButton>
     </div>
   );
